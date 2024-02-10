@@ -53,4 +53,27 @@ public class Calculator {
         return first.doubleValue() - second.doubleValue();
     }
 
+    /**
+     * Сравнивает два массива на равенство, попарно сравнивая элементы
+     * @param firstArray первый массив
+     * @param secondArray второй массив
+     * @param <T> тип элементов первого массива
+     * @param <V> тип элементов второго массива
+     * @return результат проверки
+     */
+    public static<T, V> boolean compareArrays(T[] firstArray, V[] secondArray) {
+        if (firstArray.length == secondArray.length) {
+            int i = 0;
+            while (i < firstArray.length) {
+                if (firstArray[i].getClass() != secondArray[i].getClass()) {
+                    return false;
+                }
+                i++;
+            }
+        } else {
+            return false;
+        }
+        return true;
+
+    }
 }
