@@ -1,5 +1,7 @@
 package gb.jdk;
 
+import java.util.Arrays;
+
 public class Main {
 
 //    01. Написать класс Калькулятор (необобщенный), который содержит обобщенные статические методы: sum(), multiply(), divide(), subtract().
@@ -21,6 +23,23 @@ public class Main {
         System.out.printf("Произведение чисел %d и %.2f = %.2f\n",a ,b ,Calculator.multiply(a, b));
         System.out.printf("Частное от деления числа %d на %.2f = %.2f\n",a ,b ,Calculator.divide(a, b));
         System.out.printf("Разность чисел %d и %.2f = %.2f\n",a ,b ,Calculator.subtract(a, b));
+        System.out.println(" ");
 
+        System.out.println("Проверяем одинаковые массивы:");
+        Object[] array1 = new Object[] {5, 8, 2, 9f};
+        Object[] array2 = new Object[] {3, 6, 7, 9f};
+        System.out.println(Arrays.toString(array1));
+        System.out.println(Arrays.toString(array2));
+        if (Calculator.compareArrays(array1, array2))
+            System.out.println("Масссивы имеют одинаковый тип данных");
+        System.out.println(" ");
+
+        System.out.println("Проверяем неодинаковые массивы:");
+        Object[] array3 = new Object[] {0, 5, 2f, 7f};
+        Object[] array4 = new Object[] {0, 5, 2, 7f};
+        System.out.println(Arrays.toString(array3));
+        System.out.println(Arrays.toString(array4));
+        if (!Calculator.compareArrays(array3, array4))
+            System.out.println("Масссивы имеют неодинаковый тип данных");
     }
 }
